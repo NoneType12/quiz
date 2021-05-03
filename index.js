@@ -1,6 +1,5 @@
 var fetch = require('node-fetch');
 var readline = require('readline');
-var exec = require('child_process');
 var rl = readline.createInterface(process.stdin, process.stdout);
 fetch('https://opentdb.com/api.php?amount=10&type=multiple').then(r=>r.json()).then(data=>{
     var answers = [data.results[0].incorrect_answers[0], data.results[0].incorrect_answers[1], data.results[0].incorrect_answers[2],
