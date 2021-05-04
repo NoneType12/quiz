@@ -12,10 +12,10 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple').then(r=>r.json()).t
     }
     rl.question(`${data.results[0].question} `, (ans)=>{
     if(ans==data.results[0].correct_answer){
-            process.stdout.write(`You got it right! It's ${data.results[0].correct_answer}`)
-        } else {
-            process.stdout.write(`Wrong, it was ${data.results[0].correct_answer}!`)
-        }
+        process.stdout.write(`You got it right! It's ${data.results[0].correct_answer}`)
+    } else {
+        process.stdout.write(`Wrong, it was ${data.results[0].correct_answer}!`)
+    }
         process.exit()
     });
 })
