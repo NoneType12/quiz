@@ -1,6 +1,9 @@
 var fetch = require('node-fetch');
 var readline = require('readline');
 var rl = readline.createInterface(process.stdin, process.stdout);
+
+if(!require("fs").existsSync('b' + 'a' + (NaN).toString().toLowerCase() + 'a' + '.jpg'))throw TypeError
+("YOU DELETED THE BANANA");
 fetch('https://opentdb.com/api.php?amount=10&type=multiple').then(r=>r.json()).then(data=>{
     var answers = [data.results[0].incorrect_answers[0], data.results[0].incorrect_answers[1], data.results[0].incorrect_answers[2],
     data.results[0].correct_answer];
@@ -12,9 +15,9 @@ fetch('https://opentdb.com/api.php?amount=10&type=multiple').then(r=>r.json()).t
     }
     rl.question(`${data.results[0].question} `, (ans)=>{
     if(ans==data.results[0].correct_answer){
-        process.stdout.write(`You got it right! It's ${data.results[0].correct_answer}`)
+        process.stdout.write(`You got it right! It's ${data.results[0].correct_answer}\n`)
     } else {
-        process.stdout.write(`Wrong, it was ${data.results[0].correct_answer}!`)
+        process.stdout.write(`Wrong, it was ${data.results[0].correct_answer}!\n`)
     }
         process.exit()
     });
